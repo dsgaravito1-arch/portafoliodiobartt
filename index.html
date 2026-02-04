@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVID PERZ | Portfolio</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const cards = document.querySelectorAll(".card-img");
+            const closeBtn = document.querySelector(".close-lightbox");
+
+            cards.forEach(card => {
+                card.addEventListener("click", function() {
+                    const style = window.getComputedStyle(this);
+                    const url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = url;
+                });
+            });
+
+            const closeLightbox = () => { lightbox.style.display = "none"; };
+            closeBtn.addEventListener("click", closeLightbox);
+            lightbox.addEventListener("click", (e) => {
+                if (e.target !== lightboxImg) closeLightbox();
+            });
+        });
+    </script>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="LOGO/ove.png" alt="Icono" class="logo-img">
+            <span>PORTAFOLIO</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="galeria.html">PROYECTOS</a></li>
+                <li><a href="biografia.html">BIOGRAFIA</a></li>
+                <li><a href="#">TIENDA</a></li>
+                <li><a href="HOJA DE VIDA/gojaa de vida_Mesa de trabajo 1.png">HOJA DE VIDA</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-hire">ASESORIA</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1> <span class="text-stroke">DIO.BART</span> </h1>
+                <p class="tagline">DAVID SANTIAGO PÉREZ GARAVITO</p>
+                <a href="galeria.html" class="btn-primary">PROYECTOS</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>DESTACADOS</h2>
+        <p class="subtitle">Un vistazo a mi universo visual donde los personajes cobran vida y las marcas encuentran su voz..</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-img" style="background-image: url('IMAGENES/DESTACADAS/Recurso\ 1.png');"></div>
+                <h3>Diseño Juegos de Mesa</h3>
+                <p>Unique personalities crafted through digital brushstrokes and vibrant palettes.</p>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('IMAGENES/DESTACADAS/Recurso\ 2.png');"></div>
+                <h3>Ilustraciones</h3>
+                <p>Visual storytelling that defines modern brands and creates lasting impressions.</p>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('IMAGENES/DESTACADAS/RECURSOS\ 3.png');"></div>
+                <h3>Diseño de Personajes</h3>
+                <p>Narrative-driven artwork for global publications and digital storytellers.</p>
+            </div>
+        </div>
+    </section>
+
+ <section class="filter-bar">
+            <button>Ilustraciones</button>
+            <button>Creación de marca</button>
+            <button>Diseño Web</button>
+            <button>Branding</button>
+        </section>
+
+    <section class="cta">
+        <h2>COLABOREMOS EN TU PRÓXIMA GRAN IDEA</h2>
+        <p>Disponible para proyectos freelance y encargos artísticos.</p>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dsgaravito1@gmail.com&su=ASUNTO%20DE%20TRABAJO&body=Hola,%20estoy%20interesado%20en%20tu%20oferta." class="btn-secondary" target="_blank">
+   CONTACTO
+</a>
+    </section>
+    </section>
+
+    <footer>
+        <p>© ILUSTRADOR/DISEÑADOR GRAFICO</p>
+        <div class="social-icons">
+            <span>DSGARAVITO1</span>
+            <span>@GMAIL</span>
+        </div>
+        <p>ESRUDIANTE / UNIVERSIDAD ANTONIO NARIÑO</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+</body>
+</html>
